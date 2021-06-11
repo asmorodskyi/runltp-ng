@@ -412,7 +412,7 @@ sub run_ltp
 
 		my ($tid, $c) = parse_test($runtest, $_);
 		next unless (!$include || $include =~ $tid);
-		next if ($exclude && $exclude =~ $tid);
+		next if ($exclude && $tid =~ $exclude);
 
 		print("Executing $tid\n");
 		my $test_start_time = clock_gettime(CLOCK_MONOTONIC);
